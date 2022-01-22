@@ -1,7 +1,7 @@
-FROM python:3.7.77-strech AS BASE
+FROM python:3.7.7-stretch AS BASE
 
 RUN apt-get update \
-    && apt-get --assume-yes --no-install-recommends install
+    && apt-get --assume-yes --no-install-recommends install \
         build-essential \
         curl \
         git \
@@ -14,8 +14,9 @@ WORKDIR /app
 # upgrade pip version
 RUN pip install --no-cache-dir --upgrade pip 
 
-RUN pip install rasa==2.8.1
-RUN pip install 
+RUN pip install rasa
+
+
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml 
