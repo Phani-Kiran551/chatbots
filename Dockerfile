@@ -9,7 +9,11 @@ RUN apt-get update \
         libgomp1 \
         vim
 
-WORKDIR /app
+RUN mkdir -p /home/app
+
+COPY ./github /home/app
+
+WORKDIR /home/app
 
 # upgrade pip version
 RUN pip install --no-cache-dir --upgrade pip 

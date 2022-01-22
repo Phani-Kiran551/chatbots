@@ -3,7 +3,7 @@ command: bash
 volumes:
 - /root/.cache/pip
 sync:
-- .:/app
+- .:/home/app
 forward:
 - 5005:5005
 reverse:

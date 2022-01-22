@@ -2,7 +2,7 @@ version: '3.4'
 services:
   rasa: 
     image: rasa-bot:latest
-    working_dir: /app
+    working_dir: /home/app
     build: "./"
     restart: always
     volumes:
@@ -17,11 +17,11 @@ services:
       
   rasa-actions:
     image: rasa-bot:latest
-    working_dir: /app
+    working_dir: /home/app
     build: "./"
     restart: always
     volumes:
-    - ./actions:/app/actions
+    - ./actions:/home/app/actions
 
     command: ["rasa", "run", "actions"]
     ports:
